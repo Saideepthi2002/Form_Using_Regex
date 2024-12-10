@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <lable>Username</lable><br />
+    <input type="text" id="inp1" /><br /><br />
+    <label>Email</label><br />
+    <input type="text" id="inp2" /><br /><br />
+    <lable>Password</lable><br />
+    <input type="text" id="inp3" /><br /><br />
+    <button onclick="fun()">Login</button>
+
+    <script>
+      let username = document.getElementById("inp1");
+      let email = document.getElementById("inp2");
+      let password = document.getElementById("inp3");
+      let pattern1 = /\w/;
+      let pattern2 = /[\w.]+@[a-z]+\.[a-z]{3}/;
+      let pattern3 =
+        /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8}/;
+
+      function fun() {
+        if (
+          pattern1.test(username.value) &&
+          pattern2.test(email.value) &&
+          pattern3.test(password.value)
+        ) {
+          window.open("loginsuccesful.html", "_self");
+          // window.open('loginsuccesful.html','_self')
+        } else {
+          alert("Invalid credentials 😞");
+        }
+      }
+      // when hover on input the border color should change to blue
+
+    //   input.addEventListener("mouseover", function () {
+    //     input.style.borderColor = "blue";
+    //   });
+  
+    </script>
+  </body>
+</html>
